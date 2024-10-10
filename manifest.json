@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "AdMute",
+  "version": "1.0",
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "scripting"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "host_permissions": [
+    "https://*.hulu.com/*",
+    "https://*.youtube.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.hulu.com/*",
+        "*://*.youtube.com/*"
+      ],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
