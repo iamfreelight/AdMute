@@ -34,17 +34,6 @@ function checkTab(tabId) {
           unmuteTab(tabId);
         }
       });
-    } else if (!chrome.runtime.lastError && tab && tab.active && (tab.url.includes("youtube.com"))) {
-      chrome.scripting.executeScript({
-        target: { tabId: tabId },
-        func: scanForAdTextYT
-      }, (results) => {
-        if (results && results[0].result) {
-          muteTab(tabId);
-        } else if (mutedTabs.has(tabId)) {
-          unmuteTab(tabId);
-        }
-      });	  
     } else {
       // If tab is no longer valid, clear polling for it
       clearInterval(intervals[tabId]);
@@ -69,34 +58,6 @@ function scanForAdTextHLU() {
     }
   } else {
     //console.log("Ad div not found.");
-    return false; // Ad div doesn't exist
-  }
-}
-
-function scanForAdTextYT() {
-  // Find the div with the class 'video-ads ytp-ad-module'
-  var adDiv = document.querySelectorAll('.video-ads.ytp-ad-module');
-  var adDiv2 = document.querySelectorAll('.video-ads');
-  
-  // Check if the adDiv exists and if it has any child nodes
-  if (adDiv) {
-    if (adDiv.children.length === 0) {
-      console.log("1: No ad is being played (ad div is empty).");
-      return false; // No ad is being played
-    } else {
-      console.log("1: An ad is being played (ad div is not empty).");
-      return true; // Ad is being played
-    }
-  } else if (adDiv2) {
-    if (adDiv2.children.length === 0) {
-      console.log("2: No ad is being played (ad div is empty).");
-      return false; // No ad is being played
-    } else {
-      console.log("2: An ad is being played (ad div is not empty).");
-      return true; // Ad is being played
-    }  
-  } else {
-    console.log("Ad div not found.");
     return false; // Ad div doesn't exist
   }
 }
