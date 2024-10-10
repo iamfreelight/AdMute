@@ -11,14 +11,12 @@
     "service_worker": "background.js"
   },
   "host_permissions": [
-    "https://*.hulu.com/*",
-    "https://*.youtube.com/*"
+    "https://*.hulu.com/*"
   ],
   "content_scripts": [
     {
       "matches": [
-        "*://*.hulu.com/*",
-        "*://*.youtube.com/*"
+        "*://*.hulu.com/*"
       ],
       "js": ["content.js"]
     }
