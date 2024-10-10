@@ -4,7 +4,7 @@
 
 ## Overview
 
-**AdMute** is a simple (unofficial) Chrome extension designed to automatically mute ads on a few popular video streaming platforms: Hulu and YouTube. At one time (90s thru early 2000s), this was a feature many CRT TV sets included back in the day but slowly disappeared from these devices over time!  The extension detects when ads are playing and mutes the tab to enhance your viewing experience.  
+**AdMute** is a simple (unofficial) Chrome extension designed to automatically mute ads on Hulu. At one time (90s thru early 2000s), this was a feature many CRT TV sets included back in the day but slowly disappeared from these devices over time!  The extension detects when ads are playing and mutes the tab to enhance your viewing experience.  
 
 ## Features
 
